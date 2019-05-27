@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Datachick - python</title>
+        <link rel="stylesheet" href="../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">Datachick </a></h1>
+                <nav><ul>
+                    <li><a href="https://drive.google.com/file/d/1zRqcsQJrDvJIx38t-pWGWYKQ73Lf-14s/view?usp=sharing">CV</a></li>
+                    <li><a href="../pages/../about.html">About</a></li>
+                    <li><a href="../category/blog.html">Blog</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../Data Mining with tweepy.html">Data Mining with tweepy</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-04-21T07:25:50+01:00">
+                Published: Sun 21 April 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/hammed-busirah-olaitan.html">Hammed Busirah Olaitan</a>
+        </address>
+<p>In <a href="../category/blog.html">Blog</a>.</p>
+<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/tweepy.html">tweepy</a> <a href="../tag/sentiment-analysis.html">sentiment analysis</a> <a href="../tag/twitter.html">twitter</a> </p>
+</footer><!-- /.post-info --><p>Beautiful is better than ugly.</p>
+<hr>
+<p><strong>Data Mining with tweepy</strong></p>
+<blockquote>
+<p>Beautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.Originally published in <a href="https://www.python.org/dev/peps/pep-0020/#id3">The Zen Of Python</a> by Author Tim Peters .
+<img alt="" src="https://cdn-images-1.medium.com/max/2560/1*uPK8hMIxQK6cvzw93mfyHA.jpeg"></p>
+</blockquote>
+<p>Tweepy is a Python library for accessing Twitter API. It is cool for simple automation. In this tutorial , I will be covering how to get tweets from our timeline. What we will be needing for this tutorial include:</p>
+<ol>
+<li>Python3</li>
+<li>pip</li>
+<li>Jupyter Notebook (for interactive section)</li>
+<li>
+<p>Tweepy</p>
+</li>
+<li>
+<p>Twitter account.
+The first step is to download python 3.7 visit <a href="https://www.python.org/">here</a> and download the interpreter that correspond with the os on your laptop.
+Install python3 interpreter on your computer, remember to tick add to system path during your installation.
+Getting interesting ?
+Now open your terminal or command prompt
+Type pip install tweepy or sudo apt install python3-pip for linux users then pip install tweepy
+After this install our jupyter notebook</p>
+</li>
+</ol>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*FGrQDDWwk2MUHvbBCHYzlg.png"></p>
+<p>Let’s go to our workspace now
+Open your terminal or CMD and type jupyter notebook to start our interactive section</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*vZnWOPbS8LHjC2NTJq8Smw.png"></p>
+<p>Your browser should open automatically</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*J4vtkPxFgEYnPtGFaaTMxQ.png"></p>
+<p>Let’s start work
+Now we will need to import Tweepy</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*mh1L7DSwYgZGEDp3OfN5_A.png"></p>
+<p>run with shift + enter, immediately a new cell will pop out
+<strong>Getting Twitter Credentials</strong>
+Now we need to create a twitter account, go to <a href="https://apps.twitter.com/">apps.twitter.com</a> and sign in with your account. Create a Twitter application and generate a Consumer Key, Consumer Secret, Access Token, and Access Token Secret.
+<strong>The next thing to do is to create variables for your credentials and enter into your new cell as shown below :</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*w5AubUcNxoyRjE09ETa5mg.png"></p>
+<p>Note: your consumer key,consumer secrets, access token,access token secret should be kept private.
+Press shift + enter again to run your interactive section, after pressing this a new cell will pop
+<strong>Getting Tweets</strong>
+You can get recent tweets from account you follow recently by entering the following into your new cell as shown below:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*-I3N-aX42Xy8_Z5-dFsR_g.png"></p>
+<p>This will download your timeline tweets and print each in the console.
+<strong>Now let’s get the number of followers and People you followed recently</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*mUwiqw4PwTlcvM5vkRgW4w.png"></p>
+<div class="highlight"><pre><span></span>The result is:
+h_bushroh
+244
+david_faniyi
+Moustapha_6C
+mbao_01
+OauNacoss
+pyconcharlas
+DjangoGirlsPyUK
+pyconindia
+elonmusk
+FrontendMasters
+Elishatofunmi
+intelaiiot
+DurexNG
+nextdeegit
+PrincesOluebube
+gitlab
+Djangotarkwa
+pykidsghana
+pydataghana
+instadeepai
+forloopoau
+</pre></div>
+
+
+<p>my username is h_bushroh, I have 244 followers and list of people shown include list of people I followed recently.
+<strong>How to save data gotten from twitter as csv</strong>
+This can be done using pandas, a python library.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*fr3mwDxYyWqpKoh4ekzAVg.png"></p>
+<p>This will save our fetched data to in csv format.
+<strong>Things you can do with fetched data</strong>
+Twitter Sentiment analysis
+Auto follow and auto tweet Twitter bot.
+<strong>Conclusion</strong>
+I hope that this tutorial will help to get started with data mining using tweepy.
+I love feedback please let me know what you think  and share this post with friends and colleagues.
+Thanks for reading!</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../Getting your Jupyter Notebook run on AWS.html" rel="bookmark"
+                           title="Permalink to Getting your Jupyter Notebook run on AWS">Getting your Jupyter Notebook run on AWS</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-04-21T07:25:50+01:00">
+                Published: Sun 21 April 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/hammed-busirah-olaitan.html">Hammed Busirah Olaitan</a>
+        </address>
+<p>In <a href="../category/blog.html">Blog</a>.</p>
+<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/aws.html">aws</a> <a href="../tag/ec2.html">EC2</a> <a href="../tag/jupyter-notebook.html">jupyter notebook</a> <a href="../tag/cloud.html">cloud</a> </p>
+</footer><!-- /.post-info -->                <p>If you are just getting started with deep learning and you don’t have excess cash to spend on machines, it’s cost effective to use a…</p>
+<hr>
+<p><strong>Getting your Jupyter Notebook run on AWS</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*LFUeY_cJiwP4I50f0KWJAw.jpeg"></p>
+<p>If you are just getting started with deep learning and you don’t have excess cash …</p>
+                <a class="readmore" href="../Getting your Jupyter Notebook run on AWS.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../Loading Images with Keras.html" rel="bookmark"
+                           title="Permalink to Loading Images with Keras">Loading Images with Keras</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-04-21T07:25:50+01:00">
+                Published: Sun 21 April 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/hammed-busirah-olaitan.html">Hammed Busirah Olaitan</a>
+        </address>
+<p>In <a href="../category/blog.html">Blog</a>.</p>
+<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/keras.html">keras</a> <a href="../tag/image-classification.html">image classification</a> <a href="../tag/deep-learning.html">deep learning</a> <a href="../tag/imagegenerator.html">imagegenerator</a> </p>
+</footer><!-- /.post-info -->                <p>Keras is a high-level API to build and train deep learning models. It runs on Tensorflow and Theano as backend.</p>
+<hr>
+<p><strong>Loading Images with Keras</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/0*90NS2eJLUrfzhzlL.png"></p>
+<p><img alt="" src="https://egghead.io/courses/fully-connected-neural-networks-with-keras"></p>
+<hr>
+<p><strong>Keras</strong> is a high-level API used to build and train deep learning models. It runs on Tensorflow and Theano.
+I’ll be using JupyterLab throughout this …</p>
+                <a class="readmore" href="../Loading Images with Keras.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../Recommender System made easy with Scikit-Surprise.html" rel="bookmark"
+                           title="Permalink to Recommender System made easy with Scikit-Surprise">Recommender System made easy with Scikit-Surprise</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-04-21T07:25:50+01:00">
+                Published: Sun 21 April 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/hammed-busirah-olaitan.html">Hammed Busirah Olaitan</a>
+        </address>
+<p>In <a href="../category/blog.html">Blog</a>.</p>
+<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/scikit-surprise.html">scikit-surprise</a> <a href="../tag/recommenders-system.html">recommenders system</a> </p>
+</footer><!-- /.post-info -->                <p>A recommender system is a subclass of information filtering system that seeks to predict the “rating” or “preference” a user would give to…</p>
+<hr>
+<p><strong>Recommender System made easy with Scikit-Surprise</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/0*U5XCg4kAJTynDzNb.png"></p>
+<p>https://www.offerzen.com/blog/how-to-build-a-content-based-recommender-system-for-your-product</p>
+<ul>
+<li>Collaborative filtering</li>
+<li>Content-based filtering</li>
+<li>Hybrid recommender system</li>
+</ul>
+<p>In this tutorial, I’ll be focusing on …</p>
+                <a class="readmore" href="../Recommender System made easy with Scikit-Surprise.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../Text Wrangling and Cleansing with NLTK.html" rel="bookmark"
+                           title="Permalink to Text Wrangling and Cleansing with NLTK">Text Wrangling and Cleansing with NLTK</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-04-21T07:25:50+01:00">
+                Published: Sun 21 April 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/hammed-busirah-olaitan.html">Hammed Busirah Olaitan</a>
+        </address>
+<p>In <a href="../category/blog.html">Blog</a>.</p>
+<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/nltk.html">nltk</a> <a href="../tag/text-preprocessing.html">text preprocessing</a> <a href="../tag/nlp.html">NLP</a> </p>
+</footer><!-- /.post-info -->                <p>Text processing is done in order to put text in a readable format for a machine. Text preprocessing is a very important part of our text…</p>
+<hr>
+<p><strong>Text Wrangling and Cleansing with NLTK</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/0*j9FKv2WnvVFNxU5Q.jpeg"></p>
+<p>Text processing is done in order to put text in a readable format for a machine. Text preprocessing …</p>
+                <a class="readmore" href="../Text Wrangling and Cleansing with NLTK.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../Twitter Sentiment Analysis.html" rel="bookmark"
+                           title="Permalink to Twitter Sentiment Analysis">Twitter Sentiment Analysis</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-04-21T07:25:50+01:00">
+                Published: Sun 21 April 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/hammed-busirah-olaitan.html">Hammed Busirah Olaitan</a>
+        </address>
+<p>In <a href="../category/blog.html">Blog</a>.</p>
+<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/nlp.html">NLP</a> <a href="../tag/textblob.html">textblob</a> <a href="../tag/tweepy.html">tweepy</a> <a href="../tag/twitter-api.html">twitter API</a> </p>
+</footer><!-- /.post-info -->                <p>Twitter is a popular social network where users can share thoughts. Getting people’s impression on a tweet is actually an awesome idea. I…</p>
+<hr>
+<p><strong>Twitter Sentiment Analysis</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/1200/0*Teef1oieMgAklE7r.jpg"></p>
+<p>Twitter is a popular social network where users can share thoughts. Getting people’s impression on a tweet is actually an awesome idea …</p>
+                <a class="readmore" href="../Twitter Sentiment Analysis.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://github.com/hammedb197">Github</a></li>
+                            <li><a href="https://twitter.com/h_bushroh">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/in/hammedb/">Linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
