@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Loading Images with Keras</title>
+        <link rel="stylesheet" href="http://hammedb197.github.io/theme/css/main.css" />
+        <link href="http://hammedb197.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Datachick Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://hammedb197.github.io/">Datachick </a></h1>
+                <nav><ul>
+                    <li><a href="https://drive.google.com/file/d/1zRqcsQJrDvJIx38t-pWGWYKQ73Lf-14s/view?usp=sharing">CV</a></li>
+                    <li><a href="http://hammedb197.github.io/pages/../about.html">About</a></li>
+                    <li class="active"><a href="http://hammedb197.github.io/category/blog.html">Blog</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://hammedb197.github.io/Loading Images with Keras.html" rel="bookmark"
+           title="Permalink to Loading Images with Keras">Loading Images with Keras</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-04-21T07:25:50+01:00">
+                Published: Sun 21 April 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://hammedb197.github.io/author/hammed-busirah-olaitan.html">Hammed Busirah Olaitan</a>
+        </address>
+<p>In <a href="http://hammedb197.github.io/category/blog.html">Blog</a>.</p>
+<p>tags: <a href="http://hammedb197.github.io/tag/python.html">python</a> <a href="http://hammedb197.github.io/tag/keras.html">keras</a> <a href="http://hammedb197.github.io/tag/image-classification.html">image classification</a> <a href="http://hammedb197.github.io/tag/deep-learning.html">deep learning</a> <a href="http://hammedb197.github.io/tag/imagegenerator.html">imagegenerator</a> </p>
+</footer><!-- /.post-info -->      <p>Keras is a high-level API to build and train deep learning models. It runs on Tensorflow and Theano as backend.</p>
+<hr>
+<p><strong>Loading Images with Keras</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/0*90NS2eJLUrfzhzlL.png"></p>
+<p><img alt="" src="https://egghead.io/courses/fully-connected-neural-networks-with-keras"></p>
+<hr>
+<p><strong>Keras</strong> is a high-level API used to build and train deep learning models. It runs on Tensorflow and Theano.
+I’ll be using JupyterLab throughout this session. Working with real-life data involves more than loading inbuilt datasets from our various APIs. To load a dataset from Keras API you can load mnist dataset from <code>keras.datasets import mnist keras</code>
+Load your train and test sets like this <code>(x_train, y_train), (x_test, y_test) = train_test_split()</code> .
+The truth here is that it’s not always that easy when working with real-life data. In this tutorial, I’ll be taking you step by step on how to load your data with Keras.
+The first thing is to have your CSV file containing your class name(category) and id. I’ll be showing the head of my CSV file now.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*gZ_DHzOqizQn9fHMhyZ7Xg.png"></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*1xpCZbtZB_4lagHlEqDoGA.png"></p>
+<p>number of categories
+You might want to check the categories you have so as to learn more about what you are working with. Now we know we have 23 classes, the next step is to check the value counts for each category.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*AVbD9i6al6-SYB7asg0vYw.png"></p>
+<p>value_counts
+We can see the number of observations in each distinct category. The next step is to set the directory you want each category to be. I wrote a function that can get each value for each category.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*K2_yc6O2mGpFvh-xScO8hw.png"></p>
+<p>After this I can go on and create my ‘base’ directory, then a ‘train’ directory, a ‘test’ directory.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*ls7SknEHadEaq_ZALVEm_A.png"></p>
+<p>The first thing I did here is to import os. OS module allows you to interact with the underlying operating system that Python is running on.
+After that, I defined the directory where I have my data(images) as <code>**original_dataset_dir**</code><strong>.</strong> Now I can start creating my directories, <code>**os.mkdir()**</code> <strong><em>*means </em></strong>*create a directory, <code>**os.join()**</code> is trying to concatenate base_dir and ‘train’, the result from this will be ‘base_dir/train’, from train directory create earlier then I created a directory for each category I have. After running this our directory tree would be like this</p>
+<div class="highlight"><pre><span></span>— base_dir
+├── test
+│ ├── Acne-and-Rosacea-Photo
+│ ├── Actinic-Keratosis-Basal-Cell-Carcinoma-and-other-Malignant-Lesion
+│ ├── Atopic-Dermatitis-Photo
+│ ├── Bullous-Disease-Photo
+│ ├── Cellulitis-Impetigo-and-other-Bacterial-Infection
+│ ├── Eczema-Photo
+│ ├── Exanthems-and-Drug-Eruption
+│ ├── Hair-Loss-Photos-Alopecia-and-other-Hair-D
+│ ├── Herpes-HPV-and-other-STDs-Photo
+│ ├── Light-Diseases-and-Disorders-of-Pigmentation
+│ ├── Lupus-and-other-Connective-Tissue-d
+│ ├── Melanoma-Skin-Cancer-Nevi-and-Mol
+│ ├── Nail-Fungus-and-other-Nail-D
+│ ├── Poison-Ivy-Photos-and-other-Contact-Dermatit
+│ ├── Psoriasis-pictures-Lichen-Planus-and-related-d
+│ ├── Scabies-Lyme-Disease-and-other-Infestations-and-Bit
+│ ├── Seborrheic-Keratoses-and-other-Benign-Tumor
+│ ├── Systemic-D
+│ ├── Tinea-Ringworm-Candidiasis-and-other-Fungal-Infection
+│ ├── Urticaria-Hiv
+│ ├── Vascular-Tumor
+│ ├── Vasculitis-Photo
+│ └── Warts-Molluscum-and-other-Viral-Infection
+└── train
+├── Acne-and-Rosacea-Photo
+├── Actinic-Keratosis-Basal-Cell-Carcinoma-and-other-Malignant-Lesion
+├── Atopic-Dermatitis-Photo
+├── Bullous-Disease-Photo
+├── Cellulitis-Impetigo-and-other-Bacterial-Infection
+├── Eczema-Photo
+├── Exanthems-and-Drug-Eruption
+├── Hair-Loss-Photos-Alopecia-and-other-Hair-D
+├── Herpes-HPV-and-other-STDs-Photo
+├── Light-Diseases-and-Disorders-of-Pigmentation
+├── Lupus-and-other-Connective-Tissue-d
+├── Melanoma-Skin-Cancer-Nevi-and-Mol
+├── Nail-Fungus-and-other-Nail-D
+├── Poison-Ivy-Photos-and-other-Contact-Dermatit
+├── Psoriasis-pictures-Lichen-Planus-and-related-d
+├── Scabies-Lyme-Disease-and-other-Infestations-and-Bit
+├── Seborrheic-Keratoses-and-other-Benign-Tumor
+├── Systemic-D
+├── Tinea-Ringworm-Candidiasis-and-other-Fungal-Infection
+├── Urticaria-Hiv
+├── Vascular-Tumor
+├── Vasculitis-Photo
+└── Warts-Molluscum-and-other-Viral-Infection
+</pre></div>
+
+
+<p>Now you have your directory ready, the next step is to load data into the created directories. The next step is to split my train, test in the ratio of 0.75: 0.25 of the full dataset.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*HzeEsGVIEQL_wJrYRI-fDg.png"></p>
+<p>I have defined my train_test ratio, I want to go ahead and load my data.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*TGmEnLEGiJ0qFqP9C9NqSw.png"></p>
+<p>I imported shutil earlier, shutil module helps to automate copying files and directories. I am trying to copy images from the <code>**original_dataset_dir**</code>(train_src) to my destination(train_dst) using shutil, after this step, you should have your data loaded.
+Let’s confirm if we have our data loaded.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*yoA-VEXKfIzMXNEbRy7Czg.png"></p>
+<p>Now you have your data in appropriate directories, the next step is to load your data into ImageDataGenerator from Keras.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*Yg21ARJplVnc5rgzSh276Q.png"></p>
+<p>ImageDataGenerator
+We can now perform data augmentation on our data and build our Convolutional Neural Network.
+Thanks for reading, I do appreciate feedbacks and corrections if any.
+Happy Learning, remember to hit clap button, cheers !!!.</p>
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'datachick';
+        var disqus_identifier = 'Loading Images with Keras.html';
+        var disqus_url = 'http://hammedb197.github.io/Loading Images with Keras.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//datachick.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://hammedb197.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://github.com/hammedb197">Github</a></li>
+                            <li><a href="https://twitter.com/h_bushroh">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/in/hammedb/">Linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126642567-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'datachick';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

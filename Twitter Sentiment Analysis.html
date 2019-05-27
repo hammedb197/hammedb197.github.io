@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Twitter Sentiment Analysis</title>
+        <link rel="stylesheet" href="http://hammedb197.github.io/theme/css/main.css" />
+        <link href="http://hammedb197.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Datachick Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://hammedb197.github.io/">Datachick </a></h1>
+                <nav><ul>
+                    <li><a href="https://drive.google.com/file/d/1zRqcsQJrDvJIx38t-pWGWYKQ73Lf-14s/view?usp=sharing">CV</a></li>
+                    <li><a href="http://hammedb197.github.io/pages/../about.html">About</a></li>
+                    <li class="active"><a href="http://hammedb197.github.io/category/blog.html">Blog</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://hammedb197.github.io/Twitter Sentiment Analysis.html" rel="bookmark"
+           title="Permalink to Twitter Sentiment Analysis">Twitter Sentiment Analysis</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-04-21T07:25:50+01:00">
+                Published: Sun 21 April 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://hammedb197.github.io/author/hammed-busirah-olaitan.html">Hammed Busirah Olaitan</a>
+        </address>
+<p>In <a href="http://hammedb197.github.io/category/blog.html">Blog</a>.</p>
+<p>tags: <a href="http://hammedb197.github.io/tag/python.html">python</a> <a href="http://hammedb197.github.io/tag/nlp.html">NLP</a> <a href="http://hammedb197.github.io/tag/textblob.html">textblob</a> <a href="http://hammedb197.github.io/tag/tweepy.html">tweepy</a> <a href="http://hammedb197.github.io/tag/twitter-api.html">twitter API</a> </p>
+</footer><!-- /.post-info -->      <p>Twitter is a popular social network where users can share thoughts. Getting people’s impression on a tweet is actually an awesome idea. I…</p>
+<hr>
+<p><strong>Twitter Sentiment Analysis</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/1200/0*Teef1oieMgAklE7r.jpg"></p>
+<p>Twitter is a popular social network where users can share thoughts. Getting people’s impression on a tweet is actually an awesome idea. I can actually get to know what people think about a particular brand, celebrity, personality.
+Getting Twitter data has been made very easy using Twitter API, you can check my first article with UB women publication <a href="https://medium.com/@h_bushroh/data-mining-with-tweepy-577e8f9a16c8">here</a> on how to setup Twitter application and generate a Consumer Key, Consumer Secret, Access Token, and Access Token Secret.</p>
+<div class="highlight"><pre><span></span>consumerKey = ‘XXXXXXXXXXXXXX’
+consumerSecret = ‘XXXXXXXXXXXXXX’
+accessToken = ‘XXXXXXXXXXXXXX’
+accessTokenSecret = ‘XXXXXXXXXXXXXX’
+</pre></div>
+
+
+<p>I’ll be using Tweepy to access Twitter data. Tweepy is a python library for accessing the Twitter API. The next step is API authentication, Authentication API enables you to manage all aspects of user identity when you use Auth0.</p>
+<div class="highlight"><pre><span></span>auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
+auth.set_access_token(accessToken, accessTokenSecret)
+api = tweepy.API(auth)
+</pre></div>
+
+
+<p>You can now access Twitter data; I’ll be using <code>api.search()</code> from Tweepy to get my search, I am also using Cursor module,<code>tweepy.Cursor()</code> handles pagination so I can specify the number of tweets I want to get.</p>
+<div class="highlight"><pre><span></span>tweets = tweepy.Cursor(api.search, q=’davido’).items(200)
+</pre></div>
+
+
+<p>Now that I have my tweets ready I can get several attributes from the tweet, I can get tweets from a particular region, language, time a tweet was created. What I need for this project is tweets written in English, I am getting the text body of the tweet using <code>tweet.text</code>.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*341sQGwvxyJz-EZnRuf0Tg.png"></p>
+<p>I can start preprocessing my text by applying various preprocessing techniques like tokenization and lemmatization. You can check my article on text wrangling <a href="https://medium.com/machine-intelligence-team/text-wrangling-and-cleansing-with-nltk-8e55fa25c28b">here</a>. I’ll be using NLTK for preprocessing. NLTK(Natural Language Processing toolkit) is a tool for building Python programs to work with human language data.
+The first thing I’ll be doing is to remove unwanted symbols using regex expression, tokenize data, remove common words and turn each word to its root level by lemmatizing the text. Lemmatization is the process of turning a text to its root word. Let’s have a view of our clean data.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*qUwKd1H4vywdHuj0-bTymQ.png"></p>
+<p>root_text
+After getting our data we need to classify tweets into positive and negative. In this series, I’ll be using TextBlob to classify tweets into different sentiments (positive, negative ). Texblob is a library for processing textual data, It provides a simple API for diving into common natural language processing tasks.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*F_lG21CfgfwaS9AmrgWeZg.png"></p>
+<p>classify tweets into positive and negative
+Now we are done with our sentiment analysis, the next step is to save and read data.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*SMOSry-hYR6jo0DgFtFLhw.png"></p>
+<p>From here we can visualize, I am visualizing so I can understand the data better.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*6gjAnyeouS8Ubydlp5RlzQ.jpeg"></p>
+<p><strong>Conclusion:</strong>
+Thanks for reading, I love feedbacks please let me know what you think. You can access the full code <a href="https://github.com/hammedb197/data-lit/blob/master/tsa.ipynb">here</a>.
+<strong>Resources:</strong>
+<a href="https://auth0.com/docs/api/authentication#post-passwordless-verify">https://auth0.com/docs/api/authentication#post-passwordless-verify</a>
+<a href="https://tweepy.readthedocs.io/en/v3.5.0/index.html"><strong>Tweepy Documentation - tweepy 3.5.0 documentation</strong></a>
+<a href="https://tweepy.readthedocs.io/en/v3.5.0/index.html"><em>Edit description</em></a><a href="https://tweepy.readthedocs.io/en/v3.5.0/index.html">tweepy.readthedocs.io</a>
+<a href="https://textblob.readthedocs.io/en/dev/quickstart.html#sentiment-analysis">https://textblob.readthedocs.io/en/dev/quickstart.html#sentiment-analysis</a>.</p>
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'datachick';
+        var disqus_identifier = 'Twitter Sentiment Analysis.html';
+        var disqus_url = 'http://hammedb197.github.io/Twitter Sentiment Analysis.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//datachick.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://hammedb197.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://github.com/hammedb197">Github</a></li>
+                            <li><a href="https://twitter.com/h_bushroh">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/in/hammedb/">Linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126642567-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'datachick';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

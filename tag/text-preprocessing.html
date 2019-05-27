@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Datachick - text preprocessing</title>
+        <link rel="stylesheet" href="http://hammedb197.github.io/theme/css/main.css" />
+        <link href="http://hammedb197.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Datachick Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://hammedb197.github.io/">Datachick </a></h1>
+                <nav><ul>
+                    <li><a href="https://drive.google.com/file/d/1zRqcsQJrDvJIx38t-pWGWYKQ73Lf-14s/view?usp=sharing">CV</a></li>
+                    <li><a href="http://hammedb197.github.io/pages/../about.html">About</a></li>
+                    <li><a href="http://hammedb197.github.io/category/blog.html">Blog</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://hammedb197.github.io/Text Wrangling and Cleansing with NLTK.html">Text Wrangling and Cleansing with NLTK</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-04-21T07:25:50+01:00">
+                Published: Sun 21 April 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://hammedb197.github.io/author/hammed-busirah-olaitan.html">Hammed Busirah Olaitan</a>
+        </address>
+<p>In <a href="http://hammedb197.github.io/category/blog.html">Blog</a>.</p>
+<p>tags: <a href="http://hammedb197.github.io/tag/python.html">python</a> <a href="http://hammedb197.github.io/tag/nltk.html">nltk</a> <a href="http://hammedb197.github.io/tag/text-preprocessing.html">text preprocessing</a> <a href="http://hammedb197.github.io/tag/nlp.html">NLP</a> </p>
+</footer><!-- /.post-info --><p>Text processing is done in order to put text in a readable format for a machine. Text preprocessing is a very important part of our text…</p>
+<hr>
+<p><strong>Text Wrangling and Cleansing with NLTK</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/0*j9FKv2WnvVFNxU5Q.jpeg"></p>
+<p>Text processing is done in order to put text in a readable format for a machine. Text preprocessing is a very important part of our text classification task, it helps us understand our data better and get better insight from the data.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/1200/0*V-a-_0P2fd21-N3h.png"></p>
+<p>Text preprocessing includes the following:</p>
+<ol>
+<li>Tokenization</li>
+<li>Lemmatization</li>
+<li>Stemming</li>
+<li>Stopword removal</li>
+</ol>
+<p>Before we start our text preprocessing the first step is to load our data from its data source. Data source include CSV, HTML, XML, Database, JSON, NoSQL, PDF and so on. Data from the data source can be parsed using various python parsers like import CSV, import HTML parser, import json. Snippet below shows how you can read a file in CSV and JSON format.
+<strong>Text Cleansing</strong>
+Once we have parsed the text from our data sources, the challenge is to
+make sense of raw data. Our aim is to remove all the noise surrounding the text.
+<strong>Tokenization</strong>
+This is the process of splitting large raw text into many pieces. A token is a minimal unit that a machine can understand. A text could be tokenized into sentences and words. In sentence tokenization, each sentence is seen as a unit likewise in word tokenization.
+Tokenization can come in different ways but the most common one is the word tokenization. In word tokenization texts are broken than into words which serves a the minimal unit. Tokenization modules in nltk include:
+- word_tokenizer
+- sent_tokenizer
+-punkt_tokenizer
+- Regexp_tokenizer
+-TreebankWord_Tokenizer
+Customized to tokenization could be done using regex_tokenize, Tokenization could also be done using split from regex
+re.split(‘/W+’, string).
+word_tokenize
+<strong>Stemming</strong>
+Stemming is the process of cutting down the branche of a tree to
+its stem. So basically stemming is the breaking down of a token to its basic form. A typical example is the use of <strong>eat</strong> in a sentence which has other variations like eating, eaten, eats, and so on.
+In nltk we can use LancasterStemmer, SnowballStemmer, PorterStemmer, the major difference between the trio is that Lancaster algorithm is very aggressive so sometimes it over stem certain words while PorterStemmer is less aggressive. SnowballStemmer is language designed, it can be used in several languages. To import each of these stemmers you type from nltk.stem import PorterStemmer, LancasterStemmer, SnowballStemmer.
+Text before stemming
+here I’ll be using SnowballStemmer:
+Text after stemming
+We are creating different stemmer objects and applying a stem() method on the string.
+<strong>Lemmatization</strong>
+Lemmatization is a more complex way of converting all the grammatical
+forms of the root of the word. Lemmatization uses context and part of speech to determine the inflected form of the word. Lemmatization uses WordNet which is like a dictionary to search for the context, then transform. So if you are interested in getting the context of the word it’s better to use lemmatization.
+As you can see this is better than stemming, the next step is the removal of stopwords.
+<strong>Stopword removal</strong>
+This is simply removing the words like ‘the’, ‘is’, ‘are’ that occur commonly across a corpus. Stop word removal is an important preprocessing step for some NLP applications, such as sentiment analysis, reaction check and so on.
+<strong>Conclusion</strong>
+I hope that this tutorial will help to get started with Text preprocessing. I love feedback please let me know what you think, hit the clap button and share with friends and colleagues.
+Thanks for reading!
+<strong>Resources:</strong>
+<a href="https://www.amazon.com/Natural-Language-Processing-Python-NLTK-ebook/dp/B01MROO3VA">Natural Language Processing: Python and NLTK by Iti Mathur, Nisheeth Joshi, Deepti Chopra, Jacob Perkins, Nitin Hardeniya</a>
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html"><strong>pandas.DataFrame.apply - pandas 0.24.1 documentation</strong></a>
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html"><em>Objects passed to the function are Series objects whose index is either the DataFrame's index () or the DataFrame's…</em></a><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html">pandas.pydata.org</a>
+You can have access to the dataset here <a href="http://zindi.africa/competitions/sustainable-development-goals-sdgs-text-classification-challenge">http://zindi.africa/competitions/sustainable-development-goals-sdgs-text-classification-challenge</a>.</p><p>There are <a href="http://hammedb197.github.io/Text Wrangling and Cleansing with NLTK.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://hammedb197.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://github.com/hammedb197">Github</a></li>
+                            <li><a href="https://twitter.com/h_bushroh">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/in/hammedb/">Linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126642567-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'datachick';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

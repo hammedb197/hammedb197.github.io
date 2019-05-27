@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Datachick - Blog</title><link href="http://hammedb197.github.io/" rel="alternate"></link><link href="http://hammedb197.github.io/feeds/blog.atom.xml" rel="self"></link><id>http://hammedb197.github.io/</id><updated>2019-04-21T07:25:50+01:00</updated><entry><title>Data Mining with tweepy</title><link href="http://hammedb197.github.io/Data%20Mining%20with%20tweepy.html" rel="alternate"></link><published>2019-04-21T07:25:50+01:00</published><updated>2019-04-21T07:25:50+01:00</updated><author><name>Hammed Busirah Olaitan</name></author><id>tag:hammedb197.github.io,2019-04-21:/Data Mining with tweepy.html</id><summary type="html">&lt;p&gt;Beautiful is better than ugly.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Data Mining with tweepy&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Beautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.Originally published in &lt;a href="https://www.python.org/dev/peps/pep-0020/#id3"&gt;The Zen Of Python&lt;/a&gt; by Author Tim Peters …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;Beautiful is better than ugly.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Data Mining with tweepy&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Beautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.Originally published in &lt;a href="https://www.python.org/dev/peps/pep-0020/#id3"&gt;The Zen Of Python&lt;/a&gt; by Author Tim Peters .
+&lt;img alt="" src="https://cdn-images-1.medium.com/max/2560/1*uPK8hMIxQK6cvzw93mfyHA.jpeg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Tweepy is a Python library for accessing Twitter API. It is cool for simple automation. In this tutorial , I will be covering how to get tweets from our timeline. What we will be needing for this tutorial include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Python3&lt;/li&gt;
+&lt;li&gt;pip&lt;/li&gt;
+&lt;li&gt;Jupyter Notebook (for interactive section)&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tweepy&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Twitter account.
+The first step is to download python 3.7 visit &lt;a href="https://www.python.org/"&gt;here&lt;/a&gt; and download the interpreter that correspond with the os on your laptop.
+Install python3 interpreter on your computer, remember to tick add to system path during your installation.
+Getting interesting ?
+Now open your terminal or command prompt
+Type pip install tweepy or sudo apt install python3-pip for linux users then pip install tweepy
+After this install our jupyter notebook&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*FGrQDDWwk2MUHvbBCHYzlg.png"&gt;&lt;/p&gt;
+&lt;p&gt;Let’s go to our workspace now
+Open your terminal or CMD and type jupyter notebook to start our interactive section&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*vZnWOPbS8LHjC2NTJq8Smw.png"&gt;&lt;/p&gt;
+&lt;p&gt;Your browser should open automatically&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*J4vtkPxFgEYnPtGFaaTMxQ.png"&gt;&lt;/p&gt;
+&lt;p&gt;Let’s start work
+Now we will need to import Tweepy&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*mh1L7DSwYgZGEDp3OfN5_A.png"&gt;&lt;/p&gt;
+&lt;p&gt;run with shift + enter, immediately a new cell will pop out
+&lt;strong&gt;Getting Twitter Credentials&lt;/strong&gt;
+Now we need to create a twitter account, go to &lt;a href="https://apps.twitter.com/"&gt;apps.twitter.com&lt;/a&gt; and sign in with your account. Create a Twitter application and generate a Consumer Key, Consumer Secret, Access Token, and Access Token Secret.
+&lt;strong&gt;The next thing to do is to create variables for your credentials and enter into your new cell as shown below :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*w5AubUcNxoyRjE09ETa5mg.png"&gt;&lt;/p&gt;
+&lt;p&gt;Note: your consumer key,consumer secrets, access token,access token secret should be kept private.
+Press shift + enter again to run your interactive section, after pressing this a new cell will pop
+&lt;strong&gt;Getting Tweets&lt;/strong&gt;
+You can get recent tweets from account you follow recently by entering the following into your new cell as shown below:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*-I3N-aX42Xy8_Z5-dFsR_g.png"&gt;&lt;/p&gt;
+&lt;p&gt;This will download your timeline tweets and print each in the console.
+&lt;strong&gt;Now let’s get the number of followers and People you followed recently&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*mUwiqw4PwTlcvM5vkRgW4w.png"&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;The result is:
+h_bushroh
+244
+david_faniyi
+Moustapha_6C
+mbao_01
+OauNacoss
+pyconcharlas
+DjangoGirlsPyUK
+pyconindia
+elonmusk
+FrontendMasters
+Elishatofunmi
+intelaiiot
+DurexNG
+nextdeegit
+PrincesOluebube
+gitlab
+Djangotarkwa
+pykidsghana
+pydataghana
+instadeepai
+forloopoau
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;my username is h_bushroh, I have 244 followers and list of people shown include list of people I followed recently.
+&lt;strong&gt;How to save data gotten from twitter as csv&lt;/strong&gt;
+This can be done using pandas, a python library.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*fr3mwDxYyWqpKoh4ekzAVg.png"&gt;&lt;/p&gt;
+&lt;p&gt;This will save our fetched data to in csv format.
+&lt;strong&gt;Things you can do with fetched data&lt;/strong&gt;
+Twitter Sentiment analysis
+Auto follow and auto tweet Twitter bot.
+&lt;strong&gt;Conclusion&lt;/strong&gt;
+I hope that this tutorial will help to get started with data mining using tweepy.
+I love feedback please let me know what you think  and share this post with friends and colleagues.
+Thanks for reading!&lt;/p&gt;</content><category term="python"></category><category term="tweepy"></category><category term="sentiment analysis"></category><category term="twitter"></category></entry><entry><title>Getting your Jupyter Notebook run on AWS</title><link href="http://hammedb197.github.io/Getting%20your%20Jupyter%20Notebook%20run%20on%20AWS.html" rel="alternate"></link><published>2019-04-21T07:25:50+01:00</published><updated>2019-04-21T07:25:50+01:00</updated><author><name>Hammed Busirah Olaitan</name></author><id>tag:hammedb197.github.io,2019-04-21:/Getting your Jupyter Notebook run on AWS.html</id><summary type="html">&lt;p&gt;If you are just getting started with deep learning and you don’t have excess cash to spend on machines, it’s cost effective to use a…&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Getting your Jupyter Notebook run on AWS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*LFUeY_cJiwP4I50f0KWJAw.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;If you are just getting started with deep learning and you don’t have excess cash …&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you are just getting started with deep learning and you don’t have excess cash to spend on machines, it’s cost effective to use a…&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Getting your Jupyter Notebook run on AWS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*LFUeY_cJiwP4I50f0KWJAw.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;If you are just getting started with deep learning and you don’t have excess cash to spend on machines, it’s cost effective to use a cloud service. This tutorial discusses how to get a Jupyter Notebook running on AWS cloud service.
+The first step is to register on &lt;a href="https://aws.amazon.com/"&gt;https://aws.amazon.com&lt;/a&gt; and verify your account.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*q38SmbVKEtvYfmYOy1YTyg.png"&gt;&lt;/p&gt;
+&lt;p&gt;During my registration I couldn’t verify my account using my mobile phone so I had to contact AWS support. Once you have your account verified the next step is to visit &lt;a href="https://console.aws.amazon.com/ec2/v2/home"&gt;https://console.aws.amazon.com/ec2/v2/home&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*KEOu3sb_mYU6sUNpdDVDjw.png"&gt;&lt;/p&gt;
+&lt;p&gt;Choose your preferred region and then click on Launch Instance to start the provisioning of your first virtual machine in the cloud.
+After clicking on Launch instance it will take you to a page where you select your Amazon Machine Image (AMI). This is the machine you will be working with. In this tutorial I will use Deep Learning AMI (ubuntu) since it doesn’t need any special configuration to start my deep learning.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*dhsv6WkW7dn_Um64tbt6AA.png"&gt;&lt;/p&gt;
+&lt;p&gt;After choosing your AMI the next page will allow you configure the hardware specifications of your machine.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*2BosKuwSoLU-yeskXpi_Qw.png"&gt;&lt;/p&gt;
+&lt;p&gt;For the purpose of this tutorial, I will choose p2.xlarge&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*rXMG0MvGJiZ9DyUibABhGQ.png"&gt;&lt;/p&gt;
+&lt;p&gt;For GPU enabled deep learning p2.xlarge instance is powerful yet economical, only costing around $0.90 per hour of use (as of 2018). P2 instances provide up to 16 NVIDIA K80 GPUs, 64 vCPUs and 732 GiB of
+host memory with a combined 192 GB of GPU memory, as shown in the screenshot above.
+The next step is to configure the security group of the new instance to allow Jupyter Notebook. Create a custom TCP entry with address set to “localhost” and port set to “8888”.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*jTIjPVldKdGnSpzTXPVqZg.png"&gt;&lt;/p&gt;
+&lt;p&gt;This screenshot shows how I added a custom TCP entry&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*5TzcUK1NNT_554PfUlHD-g.png"&gt;&lt;/p&gt;
+&lt;p&gt;Click on Review and launch.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*QwqDmxeniPWE4OUzx3Yi9g.png"&gt;&lt;/p&gt;
+&lt;p&gt;Clicking on Launch will take you to another page where you create and download a key pair for the newly created instance. Make sure your downloaded key pair (.pem) is in your working directory.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*kiH7yTDJrZvWORUOEs0RLA.png"&gt;&lt;/p&gt;
+&lt;p&gt;Click on Launch instances to launch your instances&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*t6D2wNUG10xvXcS63SPzpg.png"&gt;&lt;/p&gt;
+&lt;p&gt;Now the instances are launched and running! 🕺🕺💃💃
+Time to start running our Jupyter Notebook. Before we start running our Jupyter Notebook there are some things we have to take note of:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Your downloaded pair key (.pem file name)&lt;/li&gt;
+&lt;li&gt;Public DNS (IPv4)
+&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*sD1g_m4L75D6NFXDDUhWNA.png"&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Your Public DNS (IPv4) is highlighted in the picture.
+Open your terminal, create your project directory using this command &lt;code&gt;mkdir deeplearning&lt;/code&gt; and ****navigate into your created directory.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*Zexo-5g0aefAhMT5v3StFg.png"&gt;&lt;/p&gt;
+&lt;p&gt;Once you are in the project directory, run the following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;chmod&lt;/span&gt; &lt;span class="nt"&gt;0400&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;your&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;pem&lt;/span&gt; &lt;span class="nt"&gt;file&lt;/span&gt; &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="nt"&gt;ssh&lt;/span&gt; &lt;span class="nt"&gt;-L&lt;/span&gt; &lt;span class="nt"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;8888&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;8888&lt;/span&gt; &lt;span class="nt"&gt;-i&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;your&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;pem&lt;/span&gt; &lt;span class="nt"&gt;file&lt;/span&gt; &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;@&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;Public&lt;/span&gt; &lt;span class="nt"&gt;DNS&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;IPv4&lt;/span&gt;&lt;span class="o"&gt;)&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We have it all set up now.
+So anytime you want to run your server, type the following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;ssh&lt;/span&gt; &lt;span class="nt"&gt;-L&lt;/span&gt; &lt;span class="nt"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;8888&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;8888&lt;/span&gt; &lt;span class="nt"&gt;-i&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;your&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;pem&lt;/span&gt; &lt;span class="nt"&gt;file&lt;/span&gt; &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;@&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;Public&lt;/span&gt; &lt;span class="nt"&gt;DNS&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;IPv4&lt;/span&gt;&lt;span class="o"&gt;)&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="nt"&gt;jupyter&lt;/span&gt; &lt;span class="nt"&gt;notebook&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After running the first command you should get an output similar to what is shown in the screenshot below&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*RpfbmL3rz4tJlkXVezC5sQ.png"&gt;&lt;/p&gt;
+&lt;p&gt;then you run &lt;code&gt;jupyter notebook&lt;/code&gt;to get your server running&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*la1DYxhh4pZt6zHHYoq3Wg.png"&gt;&lt;/p&gt;
+&lt;p&gt;You can now access your Jupyter Notebook via your browser&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*jZ_YWpxBcH3JO5GVUO4sbg.png"&gt;&lt;/p&gt;
+&lt;p&gt;jupyter notebook
+&lt;strong&gt;The next step is to upload your files and start building models.&lt;/strong&gt;
+To upload files from my local machine to the AWS instance I will use a program called Secure Copy (SCP).
+Run the following command to upload files with SCP:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;scp -i ~/deeplearning/&amp;amp;lt;your .pem file name&amp;amp;gt; ~/deeplearning/Cat_Dogs.zip  ubuntu@&amp;amp;lt;Public DNS (IPv4)&amp;amp;gt;:~/data/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This command will upload “Cat_Dogs.zip” in your ~/deeplearning/ directory to ~/data/ on Amazon instance.
+We have successfully uploaded our file to our Amazon instance. We can now start building models.
+&lt;strong&gt;Happy Building !!&lt;/strong&gt;😀😀😀
+I welcome feedback and constructive criticism. Thank you.&lt;/p&gt;</content><category term="python"></category><category term="aws"></category><category term="EC2"></category><category term="jupyter notebook"></category><category term="cloud"></category></entry><entry><title>Loading Images with Keras</title><link href="http://hammedb197.github.io/Loading%20Images%20with%20Keras.html" rel="alternate"></link><published>2019-04-21T07:25:50+01:00</published><updated>2019-04-21T07:25:50+01:00</updated><author><name>Hammed Busirah Olaitan</name></author><id>tag:hammedb197.github.io,2019-04-21:/Loading Images with Keras.html</id><summary type="html">&lt;p&gt;Keras is a high-level API to build and train deep learning models. It runs on Tensorflow and Theano as backend.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Loading Images with Keras&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/0*90NS2eJLUrfzhzlL.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://egghead.io/courses/fully-connected-neural-networks-with-keras"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Keras&lt;/strong&gt; is a high-level API used to build and train deep learning models. It runs on Tensorflow and Theano.
+I’ll be using JupyterLab throughout this …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Keras is a high-level API to build and train deep learning models. It runs on Tensorflow and Theano as backend.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Loading Images with Keras&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/0*90NS2eJLUrfzhzlL.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://egghead.io/courses/fully-connected-neural-networks-with-keras"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Keras&lt;/strong&gt; is a high-level API used to build and train deep learning models. It runs on Tensorflow and Theano.
+I’ll be using JupyterLab throughout this session. Working with real-life data involves more than loading inbuilt datasets from our various APIs. To load a dataset from Keras API you can load mnist dataset from &lt;code&gt;keras.datasets import mnist keras&lt;/code&gt;
+Load your train and test sets like this &lt;code&gt;(x_train, y_train), (x_test, y_test) = train_test_split()&lt;/code&gt; .
+The truth here is that it’s not always that easy when working with real-life data. In this tutorial, I’ll be taking you step by step on how to load your data with Keras.
+The first thing is to have your CSV file containing your class name(category) and id. I’ll be showing the head of my CSV file now.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*gZ_DHzOqizQn9fHMhyZ7Xg.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*1xpCZbtZB_4lagHlEqDoGA.png"&gt;&lt;/p&gt;
+&lt;p&gt;number of categories
+You might want to check the categories you have so as to learn more about what you are working with. Now we know we have 23 classes, the next step is to check the value counts for each category.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*AVbD9i6al6-SYB7asg0vYw.png"&gt;&lt;/p&gt;
+&lt;p&gt;value_counts
+We can see the number of observations in each distinct category. The next step is to set the directory you want each category to be. I wrote a function that can get each value for each category.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*K2_yc6O2mGpFvh-xScO8hw.png"&gt;&lt;/p&gt;
+&lt;p&gt;After this I can go on and create my ‘base’ directory, then a ‘train’ directory, a ‘test’ directory.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*ls7SknEHadEaq_ZALVEm_A.png"&gt;&lt;/p&gt;
+&lt;p&gt;The first thing I did here is to import os. OS module allows you to interact with the underlying operating system that Python is running on.
+After that, I defined the directory where I have my data(images) as &lt;code&gt;**original_dataset_dir**&lt;/code&gt;&lt;strong&gt;.&lt;/strong&gt; Now I can start creating my directories, &lt;code&gt;**os.mkdir()**&lt;/code&gt; &lt;strong&gt;&lt;em&gt;*means &lt;/em&gt;&lt;/strong&gt;*create a directory, &lt;code&gt;**os.join()**&lt;/code&gt; is trying to concatenate base_dir and ‘train’, the result from this will be ‘base_dir/train’, from train directory create earlier then I created a directory for each category I have. After running this our directory tree would be like this&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;— base_dir
+├── test
+│ ├── Acne-and-Rosacea-Photo
+│ ├── Actinic-Keratosis-Basal-Cell-Carcinoma-and-other-Malignant-Lesion
+│ ├── Atopic-Dermatitis-Photo
+│ ├── Bullous-Disease-Photo
+│ ├── Cellulitis-Impetigo-and-other-Bacterial-Infection
+│ ├── Eczema-Photo
+│ ├── Exanthems-and-Drug-Eruption
+│ ├── Hair-Loss-Photos-Alopecia-and-other-Hair-D
+│ ├── Herpes-HPV-and-other-STDs-Photo
+│ ├── Light-Diseases-and-Disorders-of-Pigmentation
+│ ├── Lupus-and-other-Connective-Tissue-d
+│ ├── Melanoma-Skin-Cancer-Nevi-and-Mol
+│ ├── Nail-Fungus-and-other-Nail-D
+│ ├── Poison-Ivy-Photos-and-other-Contact-Dermatit
+│ ├── Psoriasis-pictures-Lichen-Planus-and-related-d
+│ ├── Scabies-Lyme-Disease-and-other-Infestations-and-Bit
+│ ├── Seborrheic-Keratoses-and-other-Benign-Tumor
+│ ├── Systemic-D
+│ ├── Tinea-Ringworm-Candidiasis-and-other-Fungal-Infection
+│ ├── Urticaria-Hiv
+│ ├── Vascular-Tumor
+│ ├── Vasculitis-Photo
+│ └── Warts-Molluscum-and-other-Viral-Infection
+└── train
+├── Acne-and-Rosacea-Photo
+├── Actinic-Keratosis-Basal-Cell-Carcinoma-and-other-Malignant-Lesion
+├── Atopic-Dermatitis-Photo
+├── Bullous-Disease-Photo
+├── Cellulitis-Impetigo-and-other-Bacterial-Infection
+├── Eczema-Photo
+├── Exanthems-and-Drug-Eruption
+├── Hair-Loss-Photos-Alopecia-and-other-Hair-D
+├── Herpes-HPV-and-other-STDs-Photo
+├── Light-Diseases-and-Disorders-of-Pigmentation
+├── Lupus-and-other-Connective-Tissue-d
+├── Melanoma-Skin-Cancer-Nevi-and-Mol
+├── Nail-Fungus-and-other-Nail-D
+├── Poison-Ivy-Photos-and-other-Contact-Dermatit
+├── Psoriasis-pictures-Lichen-Planus-and-related-d
+├── Scabies-Lyme-Disease-and-other-Infestations-and-Bit
+├── Seborrheic-Keratoses-and-other-Benign-Tumor
+├── Systemic-D
+├── Tinea-Ringworm-Candidiasis-and-other-Fungal-Infection
+├── Urticaria-Hiv
+├── Vascular-Tumor
+├── Vasculitis-Photo
+└── Warts-Molluscum-and-other-Viral-Infection
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now you have your directory ready, the next step is to load data into the created directories. The next step is to split my train, test in the ratio of 0.75: 0.25 of the full dataset.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*HzeEsGVIEQL_wJrYRI-fDg.png"&gt;&lt;/p&gt;
+&lt;p&gt;I have defined my train_test ratio, I want to go ahead and load my data.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*TGmEnLEGiJ0qFqP9C9NqSw.png"&gt;&lt;/p&gt;
+&lt;p&gt;I imported shutil earlier, shutil module helps to automate copying files and directories. I am trying to copy images from the &lt;code&gt;**original_dataset_dir**&lt;/code&gt;(train_src) to my destination(train_dst) using shutil, after this step, you should have your data loaded.
+Let’s confirm if we have our data loaded.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*yoA-VEXKfIzMXNEbRy7Czg.png"&gt;&lt;/p&gt;
+&lt;p&gt;Now you have your data in appropriate directories, the next step is to load your data into ImageDataGenerator from Keras.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*Yg21ARJplVnc5rgzSh276Q.png"&gt;&lt;/p&gt;
+&lt;p&gt;ImageDataGenerator
+We can now perform data augmentation on our data and build our Convolutional Neural Network.
+Thanks for reading, I do appreciate feedbacks and corrections if any.
+Happy Learning, remember to hit clap button, cheers !!!.&lt;/p&gt;</content><category term="python"></category><category term="keras"></category><category term="image classification"></category><category term="deep learning"></category><category term="imagegenerator"></category></entry><entry><title>Recommender System made easy with Scikit-Surprise</title><link href="http://hammedb197.github.io/Recommender%20System%20made%20easy%20with%20Scikit-Surprise.html" rel="alternate"></link><published>2019-04-21T07:25:50+01:00</published><updated>2019-04-21T07:25:50+01:00</updated><author><name>Hammed Busirah Olaitan</name></author><id>tag:hammedb197.github.io,2019-04-21:/Recommender System made easy with Scikit-Surprise.html</id><summary type="html">&lt;p&gt;A recommender system is a subclass of information filtering system that seeks to predict the “rating” or “preference” a user would give to…&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Recommender System made easy with Scikit-Surprise&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/0*U5XCg4kAJTynDzNb.png"&gt;&lt;/p&gt;
+&lt;p&gt;https://www.offerzen.com/blog/how-to-build-a-content-based-recommender-system-for-your-product&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Collaborative filtering&lt;/li&gt;
+&lt;li&gt;Content-based filtering&lt;/li&gt;
+&lt;li&gt;Hybrid recommender system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this tutorial, I’ll be focusing on …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A recommender system is a subclass of information filtering system that seeks to predict the “rating” or “preference” a user would give to…&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Recommender System made easy with Scikit-Surprise&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/0*U5XCg4kAJTynDzNb.png"&gt;&lt;/p&gt;
+&lt;p&gt;https://www.offerzen.com/blog/how-to-build-a-content-based-recommender-system-for-your-product&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Collaborative filtering&lt;/li&gt;
+&lt;li&gt;Content-based filtering&lt;/li&gt;
+&lt;li&gt;Hybrid recommender system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this tutorial, I’ll be focusing on Collaborative filtering. In Collaborative filtering, the model learns from the user’s past behavior, user’s decision, preference to predict items the user might have an interest in.
+Scikit-Surprise is an easy-to-use Python scikit for recommender systems, another example of python scikit is Scikit-learn which has lots of awesome estimators. To install surprise, type this on your CMD/Terminal&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install scikit-surprise
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Preprocessing&lt;/strong&gt;
+The first thing is to preprocess our data. We have to check the shape, description, a number of unique value, columns and analyze to get more insights from our data.
+loading data with pandas
+from the snippet above you can I see I loaded my data with pandas then check the first few rows. We have four columns &lt;em&gt;userId, moveId, rating and timestamp,&lt;/em&gt; and checked the value counts of &lt;em&gt;rating.&lt;/em&gt; From here we can see rating of 4.0 has highest value counts. This means more people rated the movie 4.0 has shown in the plot below.
+Now I have to check the number of null value in my data.
+To load a dataset from a pandas dataframe, you will need the &lt;code&gt;**load_from_df()**&lt;/code&gt; method. You will also need a &lt;code&gt;**Reader**&lt;/code&gt; object, but only the &lt;code&gt;rating_scale&lt;/code&gt; the parameter must be specified the default rating_scaale is (2,5). The dataframe must have three columns, corresponding to the user (raw) ids, the item (raw) ids, and the ratings in this order.
+The next step is splitting our dataset in train and test set in a ratio of 75%:25%
+I will train with trainset and test with testset.
+I’ll be using the famous SVD algorithm, as popularized by &lt;a href="http://sifter.org/~simon/journal/20061211.html"&gt;Simon Funk&lt;/a&gt; during the Netflix Prize. SVD is a Matrix Factorization techniques are usually more effective because they allow us to discover the latent features underlying the interactions between users and items.
+&lt;strong&gt;Evaluation&lt;/strong&gt;
+Singular vector decomposition (SVD) shown here employs the use of gradient descent to minimize the squared error between predicted rating and actual rating, eventually getting the best model.
+You can perform Cross-validation and heavy hyperparameters tuning with surprise to get more accurate predictions.
+I love feedback please let me know what you think  and share this post with friends and colleagues. You can get access to the full code &lt;a href="https://github.com/hammedb197/Recommender-surprise"&gt;here&lt;/a&gt;
+Thanks for reading!
+Resources :
+&lt;a href="https://en.wikipedia.org/wiki/Recommender_system"&gt;&lt;strong&gt;Recommender system - Wikipedia&lt;/strong&gt;&lt;/a&gt;
+&lt;a href="https://en.wikipedia.org/wiki/Recommender_system"&gt;&lt;em&gt;The majority of existing approaches to recommender systems focus on recommending the most relevant content to users…&lt;/em&gt;&lt;/a&gt;&lt;a href="https://en.wikipedia.org/wiki/Recommender_system"&gt;en.wikipedia.org&lt;/a&gt;
+Data source: &lt;a href="https://grouplens.org/datasets/movielens/100k/"&gt;https://grouplens.org/datasets/movielens/100k/&lt;/a&gt;
+Link to surprise documentation: &lt;a href="https://surprise.readthedocs.io/en/stable/index.html"&gt;https://surprise.readthedocs.io/en/stable/index.html&lt;/a&gt;&lt;/p&gt;</content><category term="python"></category><category term="scikit-surprise"></category><category term="recommenders system"></category></entry><entry><title>Text Wrangling and Cleansing with NLTK</title><link href="http://hammedb197.github.io/Text%20Wrangling%20and%20Cleansing%20with%20NLTK.html" rel="alternate"></link><published>2019-04-21T07:25:50+01:00</published><updated>2019-04-21T07:25:50+01:00</updated><author><name>Hammed Busirah Olaitan</name></author><id>tag:hammedb197.github.io,2019-04-21:/Text Wrangling and Cleansing with NLTK.html</id><summary type="html">&lt;p&gt;Text processing is done in order to put text in a readable format for a machine. Text preprocessing is a very important part of our text…&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Text Wrangling and Cleansing with NLTK&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/0*j9FKv2WnvVFNxU5Q.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Text processing is done in order to put text in a readable format for a machine. Text preprocessing …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Text processing is done in order to put text in a readable format for a machine. Text preprocessing is a very important part of our text…&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Text Wrangling and Cleansing with NLTK&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/0*j9FKv2WnvVFNxU5Q.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Text processing is done in order to put text in a readable format for a machine. Text preprocessing is a very important part of our text classification task, it helps us understand our data better and get better insight from the data.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/1200/0*V-a-_0P2fd21-N3h.png"&gt;&lt;/p&gt;
+&lt;p&gt;Text preprocessing includes the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Tokenization&lt;/li&gt;
+&lt;li&gt;Lemmatization&lt;/li&gt;
+&lt;li&gt;Stemming&lt;/li&gt;
+&lt;li&gt;Stopword removal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Before we start our text preprocessing the first step is to load our data from its data source. Data source include CSV, HTML, XML, Database, JSON, NoSQL, PDF and so on. Data from the data source can be parsed using various python parsers like import CSV, import HTML parser, import json. Snippet below shows how you can read a file in CSV and JSON format.
+&lt;strong&gt;Text Cleansing&lt;/strong&gt;
+Once we have parsed the text from our data sources, the challenge is to
+make sense of raw data. Our aim is to remove all the noise surrounding the text.
+&lt;strong&gt;Tokenization&lt;/strong&gt;
+This is the process of splitting large raw text into many pieces. A token is a minimal unit that a machine can understand. A text could be tokenized into sentences and words. In sentence tokenization, each sentence is seen as a unit likewise in word tokenization.
+Tokenization can come in different ways but the most common one is the word tokenization. In word tokenization texts are broken than into words which serves a the minimal unit. Tokenization modules in nltk include:
+- word_tokenizer
+- sent_tokenizer
+-punkt_tokenizer
+- Regexp_tokenizer
+-TreebankWord_Tokenizer
+Customized to tokenization could be done using regex_tokenize, Tokenization could also be done using split from regex
+re.split(‘/W+’, string).
+word_tokenize
+&lt;strong&gt;Stemming&lt;/strong&gt;
+Stemming is the process of cutting down the branche of a tree to
+its stem. So basically stemming is the breaking down of a token to its basic form. A typical example is the use of &lt;strong&gt;eat&lt;/strong&gt; in a sentence which has other variations like eating, eaten, eats, and so on.
+In nltk we can use LancasterStemmer, SnowballStemmer, PorterStemmer, the major difference between the trio is that Lancaster algorithm is very aggressive so sometimes it over stem certain words while PorterStemmer is less aggressive. SnowballStemmer is language designed, it can be used in several languages. To import each of these stemmers you type from nltk.stem import PorterStemmer, LancasterStemmer, SnowballStemmer.
+Text before stemming
+here I’ll be using SnowballStemmer:
+Text after stemming
+We are creating different stemmer objects and applying a stem() method on the string.
+&lt;strong&gt;Lemmatization&lt;/strong&gt;
+Lemmatization is a more complex way of converting all the grammatical
+forms of the root of the word. Lemmatization uses context and part of speech to determine the inflected form of the word. Lemmatization uses WordNet which is like a dictionary to search for the context, then transform. So if you are interested in getting the context of the word it’s better to use lemmatization.
+As you can see this is better than stemming, the next step is the removal of stopwords.
+&lt;strong&gt;Stopword removal&lt;/strong&gt;
+This is simply removing the words like ‘the’, ‘is’, ‘are’ that occur commonly across a corpus. Stop word removal is an important preprocessing step for some NLP applications, such as sentiment analysis, reaction check and so on.
+&lt;strong&gt;Conclusion&lt;/strong&gt;
+I hope that this tutorial will help to get started with Text preprocessing. I love feedback please let me know what you think, hit the clap button and share with friends and colleagues.
+Thanks for reading!
+&lt;strong&gt;Resources:&lt;/strong&gt;
+&lt;a href="https://www.amazon.com/Natural-Language-Processing-Python-NLTK-ebook/dp/B01MROO3VA"&gt;Natural Language Processing: Python and NLTK by Iti Mathur, Nisheeth Joshi, Deepti Chopra, Jacob Perkins, Nitin Hardeniya&lt;/a&gt;
+&lt;a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html"&gt;&lt;strong&gt;pandas.DataFrame.apply - pandas 0.24.1 documentation&lt;/strong&gt;&lt;/a&gt;
+&lt;a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html"&gt;&lt;em&gt;Objects passed to the function are Series objects whose index is either the DataFrame's index () or the DataFrame's…&lt;/em&gt;&lt;/a&gt;&lt;a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html"&gt;pandas.pydata.org&lt;/a&gt;
+You can have access to the dataset here &lt;a href="http://zindi.africa/competitions/sustainable-development-goals-sdgs-text-classification-challenge"&gt;http://zindi.africa/competitions/sustainable-development-goals-sdgs-text-classification-challenge&lt;/a&gt;.&lt;/p&gt;</content><category term="python"></category><category term="nltk"></category><category term="text preprocessing"></category><category term="NLP"></category></entry><entry><title>Twitter Sentiment Analysis</title><link href="http://hammedb197.github.io/Twitter%20Sentiment%20Analysis.html" rel="alternate"></link><published>2019-04-21T07:25:50+01:00</published><updated>2019-04-21T07:25:50+01:00</updated><author><name>Hammed Busirah Olaitan</name></author><id>tag:hammedb197.github.io,2019-04-21:/Twitter Sentiment Analysis.html</id><summary type="html">&lt;p&gt;Twitter is a popular social network where users can share thoughts. Getting people’s impression on a tweet is actually an awesome idea. I…&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Twitter Sentiment Analysis&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/1200/0*Teef1oieMgAklE7r.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Twitter is a popular social network where users can share thoughts. Getting people’s impression on a tweet is actually an awesome idea …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Twitter is a popular social network where users can share thoughts. Getting people’s impression on a tweet is actually an awesome idea. I…&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Twitter Sentiment Analysis&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/1200/0*Teef1oieMgAklE7r.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Twitter is a popular social network where users can share thoughts. Getting people’s impression on a tweet is actually an awesome idea. I can actually get to know what people think about a particular brand, celebrity, personality.
+Getting Twitter data has been made very easy using Twitter API, you can check my first article with UB women publication &lt;a href="https://medium.com/@h_bushroh/data-mining-with-tweepy-577e8f9a16c8"&gt;here&lt;/a&gt; on how to setup Twitter application and generate a Consumer Key, Consumer Secret, Access Token, and Access Token Secret.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;consumerKey = ‘XXXXXXXXXXXXXX’
+consumerSecret = ‘XXXXXXXXXXXXXX’
+accessToken = ‘XXXXXXXXXXXXXX’
+accessTokenSecret = ‘XXXXXXXXXXXXXX’
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I’ll be using Tweepy to access Twitter data. Tweepy is a python library for accessing the Twitter API. The next step is API authentication, Authentication API enables you to manage all aspects of user identity when you use Auth0.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
+auth.set_access_token(accessToken, accessTokenSecret)
+api = tweepy.API(auth)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can now access Twitter data; I’ll be using &lt;code&gt;api.search()&lt;/code&gt; from Tweepy to get my search, I am also using Cursor module,&lt;code&gt;tweepy.Cursor()&lt;/code&gt; handles pagination so I can specify the number of tweets I want to get.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tweets = tweepy.Cursor(api.search, q=’davido’).items(200)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now that I have my tweets ready I can get several attributes from the tweet, I can get tweets from a particular region, language, time a tweet was created. What I need for this project is tweets written in English, I am getting the text body of the tweet using &lt;code&gt;tweet.text&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*341sQGwvxyJz-EZnRuf0Tg.png"&gt;&lt;/p&gt;
+&lt;p&gt;I can start preprocessing my text by applying various preprocessing techniques like tokenization and lemmatization. You can check my article on text wrangling &lt;a href="https://medium.com/machine-intelligence-team/text-wrangling-and-cleansing-with-nltk-8e55fa25c28b"&gt;here&lt;/a&gt;. I’ll be using NLTK for preprocessing. NLTK(Natural Language Processing toolkit) is a tool for building Python programs to work with human language data.
+The first thing I’ll be doing is to remove unwanted symbols using regex expression, tokenize data, remove common words and turn each word to its root level by lemmatizing the text. Lemmatization is the process of turning a text to its root word. Let’s have a view of our clean data.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*qUwKd1H4vywdHuj0-bTymQ.png"&gt;&lt;/p&gt;
+&lt;p&gt;root_text
+After getting our data we need to classify tweets into positive and negative. In this series, I’ll be using TextBlob to classify tweets into different sentiments (positive, negative ). Texblob is a library for processing textual data, It provides a simple API for diving into common natural language processing tasks.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*F_lG21CfgfwaS9AmrgWeZg.png"&gt;&lt;/p&gt;
+&lt;p&gt;classify tweets into positive and negative
+Now we are done with our sentiment analysis, the next step is to save and read data.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*SMOSry-hYR6jo0DgFtFLhw.png"&gt;&lt;/p&gt;
+&lt;p&gt;From here we can visualize, I am visualizing so I can understand the data better.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/800/1*6gjAnyeouS8Ubydlp5RlzQ.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt;
+Thanks for reading, I love feedbacks please let me know what you think. You can access the full code &lt;a href="https://github.com/hammedb197/data-lit/blob/master/tsa.ipynb"&gt;here&lt;/a&gt;.
+&lt;strong&gt;Resources:&lt;/strong&gt;
+&lt;a href="https://auth0.com/docs/api/authentication#post-passwordless-verify"&gt;https://auth0.com/docs/api/authentication#post-passwordless-verify&lt;/a&gt;
+&lt;a href="https://tweepy.readthedocs.io/en/v3.5.0/index.html"&gt;&lt;strong&gt;Tweepy Documentation - tweepy 3.5.0 documentation&lt;/strong&gt;&lt;/a&gt;
+&lt;a href="https://tweepy.readthedocs.io/en/v3.5.0/index.html"&gt;&lt;em&gt;Edit description&lt;/em&gt;&lt;/a&gt;&lt;a href="https://tweepy.readthedocs.io/en/v3.5.0/index.html"&gt;tweepy.readthedocs.io&lt;/a&gt;
+&lt;a href="https://textblob.readthedocs.io/en/dev/quickstart.html#sentiment-analysis"&gt;https://textblob.readthedocs.io/en/dev/quickstart.html#sentiment-analysis&lt;/a&gt;.&lt;/p&gt;</content><category term="python"></category><category term="NLP"></category><category term="textblob"></category><category term="tweepy"></category><category term="twitter API"></category></entry></feed>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Datachick - aws</title>
+        <link rel="stylesheet" href="http://hammedb197.github.io/theme/css/main.css" />
+        <link href="http://hammedb197.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Datachick Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://hammedb197.github.io/">Datachick </a></h1>
+                <nav><ul>
+                    <li><a href="https://drive.google.com/file/d/1zRqcsQJrDvJIx38t-pWGWYKQ73Lf-14s/view?usp=sharing">CV</a></li>
+                    <li><a href="http://hammedb197.github.io/pages/../about.html">About</a></li>
+                    <li><a href="http://hammedb197.github.io/category/blog.html">Blog</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://hammedb197.github.io/Getting your Jupyter Notebook run on AWS.html">Getting your Jupyter Notebook run on AWS</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-04-21T07:25:50+01:00">
+                Published: Sun 21 April 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://hammedb197.github.io/author/hammed-busirah-olaitan.html">Hammed Busirah Olaitan</a>
+        </address>
+<p>In <a href="http://hammedb197.github.io/category/blog.html">Blog</a>.</p>
+<p>tags: <a href="http://hammedb197.github.io/tag/python.html">python</a> <a href="http://hammedb197.github.io/tag/aws.html">aws</a> <a href="http://hammedb197.github.io/tag/ec2.html">EC2</a> <a href="http://hammedb197.github.io/tag/jupyter-notebook.html">jupyter notebook</a> <a href="http://hammedb197.github.io/tag/cloud.html">cloud</a> </p>
+</footer><!-- /.post-info --><p>If you are just getting started with deep learning and you don’t have excess cash to spend on machines, it’s cost effective to use a…</p>
+<hr>
+<p><strong>Getting your Jupyter Notebook run on AWS</strong></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*LFUeY_cJiwP4I50f0KWJAw.jpeg"></p>
+<p>If you are just getting started with deep learning and you don’t have excess cash to spend on machines, it’s cost effective to use a cloud service. This tutorial discusses how to get a Jupyter Notebook running on AWS cloud service.
+The first step is to register on <a href="https://aws.amazon.com/">https://aws.amazon.com</a> and verify your account.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*q38SmbVKEtvYfmYOy1YTyg.png"></p>
+<p>During my registration I couldn’t verify my account using my mobile phone so I had to contact AWS support. Once you have your account verified the next step is to visit <a href="https://console.aws.amazon.com/ec2/v2/home">https://console.aws.amazon.com/ec2/v2/home</a></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*KEOu3sb_mYU6sUNpdDVDjw.png"></p>
+<p>Choose your preferred region and then click on Launch Instance to start the provisioning of your first virtual machine in the cloud.
+After clicking on Launch instance it will take you to a page where you select your Amazon Machine Image (AMI). This is the machine you will be working with. In this tutorial I will use Deep Learning AMI (ubuntu) since it doesn’t need any special configuration to start my deep learning.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*dhsv6WkW7dn_Um64tbt6AA.png"></p>
+<p>After choosing your AMI the next page will allow you configure the hardware specifications of your machine.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*2BosKuwSoLU-yeskXpi_Qw.png"></p>
+<p>For the purpose of this tutorial, I will choose p2.xlarge</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*rXMG0MvGJiZ9DyUibABhGQ.png"></p>
+<p>For GPU enabled deep learning p2.xlarge instance is powerful yet economical, only costing around $0.90 per hour of use (as of 2018). P2 instances provide up to 16 NVIDIA K80 GPUs, 64 vCPUs and 732 GiB of
+host memory with a combined 192 GB of GPU memory, as shown in the screenshot above.
+The next step is to configure the security group of the new instance to allow Jupyter Notebook. Create a custom TCP entry with address set to “localhost” and port set to “8888”.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*jTIjPVldKdGnSpzTXPVqZg.png"></p>
+<p>This screenshot shows how I added a custom TCP entry</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*5TzcUK1NNT_554PfUlHD-g.png"></p>
+<p>Click on Review and launch.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*QwqDmxeniPWE4OUzx3Yi9g.png"></p>
+<p>Clicking on Launch will take you to another page where you create and download a key pair for the newly created instance. Make sure your downloaded key pair (.pem) is in your working directory.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*kiH7yTDJrZvWORUOEs0RLA.png"></p>
+<p>Click on Launch instances to launch your instances</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*t6D2wNUG10xvXcS63SPzpg.png"></p>
+<p>Now the instances are launched and running! 🕺🕺💃💃
+Time to start running our Jupyter Notebook. Before we start running our Jupyter Notebook there are some things we have to take note of:</p>
+<ol>
+<li>Your downloaded pair key (.pem file name)</li>
+<li>Public DNS (IPv4)
+<img alt="" src="https://cdn-images-1.medium.com/max/800/1*sD1g_m4L75D6NFXDDUhWNA.png"></li>
+</ol>
+<p>Your Public DNS (IPv4) is highlighted in the picture.
+Open your terminal, create your project directory using this command <code>mkdir deeplearning</code> and ****navigate into your created directory.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*Zexo-5g0aefAhMT5v3StFg.png"></p>
+<p>Once you are in the project directory, run the following command:</p>
+<div class="highlight"><pre><span></span><span class="nt">chmod</span> <span class="nt">0400</span> <span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">your</span> <span class="p">.</span><span class="nc">pem</span> <span class="nt">file</span> <span class="nt">name</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span>
+<span class="nt">ssh</span> <span class="nt">-L</span> <span class="nt">localhost</span><span class="p">:</span><span class="nd">8888</span><span class="p">:</span><span class="nd">localhost</span><span class="p">:</span><span class="nd">8888</span> <span class="nt">-i</span> <span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">your</span> <span class="p">.</span><span class="nc">pem</span> <span class="nt">file</span> <span class="nt">name</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span> <span class="nt">ubuntu</span><span class="o">@&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">Public</span> <span class="nt">DNS</span> <span class="o">(</span><span class="nt">IPv4</span><span class="o">)&amp;</span><span class="nt">gt</span><span class="o">;</span>
+</pre></div>
+
+
+<p>We have it all set up now.
+So anytime you want to run your server, type the following command:</p>
+<div class="highlight"><pre><span></span><span class="nt">ssh</span> <span class="nt">-L</span> <span class="nt">localhost</span><span class="p">:</span><span class="nd">8888</span><span class="p">:</span><span class="nd">localhost</span><span class="p">:</span><span class="nd">8888</span> <span class="nt">-i</span> <span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">your</span> <span class="p">.</span><span class="nc">pem</span> <span class="nt">file</span> <span class="nt">name</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span> <span class="nt">ubuntu</span><span class="o">@&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">Public</span> <span class="nt">DNS</span> <span class="o">(</span><span class="nt">IPv4</span><span class="o">)&amp;</span><span class="nt">gt</span><span class="o">;</span>
+<span class="nt">jupyter</span> <span class="nt">notebook</span>
+</pre></div>
+
+
+<p>After running the first command you should get an output similar to what is shown in the screenshot below</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*RpfbmL3rz4tJlkXVezC5sQ.png"></p>
+<p>then you run <code>jupyter notebook</code>to get your server running</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*la1DYxhh4pZt6zHHYoq3Wg.png"></p>
+<p>You can now access your Jupyter Notebook via your browser</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*jZ_YWpxBcH3JO5GVUO4sbg.png"></p>
+<p>jupyter notebook
+<strong>The next step is to upload your files and start building models.</strong>
+To upload files from my local machine to the AWS instance I will use a program called Secure Copy (SCP).
+Run the following command to upload files with SCP:</p>
+<div class="highlight"><pre><span></span>scp -i ~/deeplearning/&amp;lt;your .pem file name&amp;gt; ~/deeplearning/Cat_Dogs.zip  ubuntu@&amp;lt;Public DNS (IPv4)&amp;gt;:~/data/
+</pre></div>
+
+
+<p>This command will upload “Cat_Dogs.zip” in your ~/deeplearning/ directory to ~/data/ on Amazon instance.
+We have successfully uploaded our file to our Amazon instance. We can now start building models.
+<strong>Happy Building !!</strong>😀😀😀
+I welcome feedback and constructive criticism. Thank you.</p><p>There are <a href="http://hammedb197.github.io/Getting your Jupyter Notebook run on AWS.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://hammedb197.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://github.com/hammedb197">Github</a></li>
+                            <li><a href="https://twitter.com/h_bushroh">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/in/hammedb/">Linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126642567-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'datachick';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
